@@ -10,7 +10,16 @@ class IntentController extends Controller
     public function index()
     {
         return view('index', [
-            'intents' => Intent::all()
+            'intents' => Intent::latest()->filter(
+                request(['search'])
+            )->get()
+        ]);
+    }
+
+    public function show(Intent $intent)
+    {
+        return view('show', [
+            'intent' => $intent
         ]);
     }
 }

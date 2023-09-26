@@ -13,4 +13,14 @@ class Intent extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, fn ($query, $search) => 
+            $query->where(fn ($query) =>
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('id', 'like', '%' . $search . '%')
+            )
+        );
+    }
 }

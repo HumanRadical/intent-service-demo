@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IntentController::class, 'index'])->name('index');
+Route::get('/intent/{intent}', [IntentController::class, 'show'])->name('show');

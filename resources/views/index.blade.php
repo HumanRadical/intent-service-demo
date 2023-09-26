@@ -1,9 +1,15 @@
 <x-layout>
-    <h1 class="text-center text-4xl font-semibold">Intent Service</h1>
     <div class="border rounded-xl w-2/3 p-6 mx-auto mt-4">
         <form class="flex justify-center gap-4" action="/">
-            <input class="border border-gray-500 rounded-md w-80 px-2 py-1" type="text" placeholder="Search...">
-            <input class="border border-gray-500 rounded-md px-2 py-1" type="date">
+            <input 
+                class="border border-gray-500 rounded-md w-80 px-2 py-1" 
+                type="text" 
+                name="search"
+                placeholder="Search..." />
+            <input 
+                class="border border-gray-500 rounded-md px-2 py-1" 
+                name="date"
+                type="date" />
             <button class="border border-gray-500 bg-gray-200 rounded-md px-3 py-1">Search</button>
         </form>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
@@ -43,7 +49,7 @@
                                 {{ $intent->id }}
                             </th>
                             <td class="px-6 py-4">
-                                <time>{{ $intent->created_at->format('F d, h:ma') }}</time>
+                                <time>{{ $intent->created_at->format('M d, h:iA T') }}</time>
                             </td>
                             <td class="px-6 py-4">
                                 {{ $intent->user->id }}
@@ -55,8 +61,10 @@
                                 {{ $intent->user->email }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $intent->name }}
-                            </td>
+                                    <a href="/intent/{{ $intent->id }}">
+                                        {{ $intent->name }}
+                                    </a>
+                                </td>
                             <td class="px-6 py-4">
                                 <a class="hover:underline">Parent</a>
                             </td>
