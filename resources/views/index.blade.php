@@ -6,7 +6,7 @@
             <input class="border border-gray-500 rounded-md px-2 py-1" type="date">
             <button class="border border-gray-500 bg-gray-200 rounded-md px-3 py-1">Search</button>
         </form>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -43,7 +43,7 @@
                                 {{ $intent->id }}
                             </th>
                             <td class="px-6 py-4">
-                                <time>{{ $intent->created_at }}</time>
+                                <time>{{ $intent->created_at->format('F d, h:ma') }}</time>
                             </td>
                             <td class="px-6 py-4">
                                 {{ $intent->user->id }}
@@ -61,7 +61,7 @@
                                 <a class="hover:underline">Parent</a>
                             </td>
                             <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500">
-                                {{ $intent->successful ? "Success" : "Declined" }}
+                                {{ $intent->successful ? "✓ Success" : "✕ Declined" }}
                             </td>
                         </tr>
                     @endforeach
