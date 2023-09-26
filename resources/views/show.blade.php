@@ -21,7 +21,7 @@
     <div class="w-4/5 mx-auto mt-10">
         <div class="flex justify-between mx-6 mb-2">
             <h3 class="font-semibold text-2xl">Children:</h3>
-            <a class="my-auto text-lg text-gray-600 hover:underline" href="/">View Full</a>
+            <a class="my-auto text-lg text-gray-500 hover:underline" href="/">View Full</a>
         </div>
         <x-table :intents="[$intent]" />
     </div>
