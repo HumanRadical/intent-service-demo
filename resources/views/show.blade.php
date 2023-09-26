@@ -19,7 +19,7 @@
         <img class="border-2 border-black w-3/5" src="http://localhost:8000/images/google_maps.png" alt="Google Maps">
     </div>
     <div class="w-4/5 mx-auto mt-10">
-        <div class="flex justify-between mx-6">
+        <div class="flex justify-between mx-6 mb-2">
             <h3 class="font-semibold text-2xl">Children:</h3>
             <a class="my-auto text-lg text-gray-600 hover:underline" href="/">View Full</a>
         </div>

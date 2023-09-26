@@ -1,5 +1,5 @@
 <x-layout>
-    <form class="flex justify-center gap-4" action="/">
+    <form class="flex justify-center gap-4 mb-6" action="/">
         <input 
             class="border border-gray-500 rounded-md w-80 px-2 py-1" 
             type="text" 
