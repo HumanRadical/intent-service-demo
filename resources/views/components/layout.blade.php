@@ -16,7 +16,7 @@
     <main>
         <img class="w-32 m-3" src="https://asset.brandfetch.io/id0rDTn4Db/idSk_YIsHP.png" alt="Givelify">
         <h1 class="text-center text-4xl font-semibold">Intent Service</h1>
-        <section>
+        <section class="border rounded-xl w-2/3 py-6 px-10 mx-auto mt-4">
             {{ $slot }}
         </section>
     </main>
