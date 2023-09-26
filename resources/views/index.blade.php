@@ -17,6 +17,9 @@
                             Date
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Donor ID
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Donor Name
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -34,29 +37,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            1
-                        </th>
-                        <td class="px-6 py-4">
-                            <time>Oct 10, 2023 @ 8:00pm</time>
-                        </td>
-                        <td class="px-6 py-4">
-                            Johnny Test
-                        </td>
-                        <td class="px-6 py-4">
-                            jtest@example.com
-                        </td>
-                        <td class="px-6 py-4">
-                            Make a Donation
-                        </td>
-                        <td class="px-6 py-4">
-                            <a class="hover:underline">Use Giving App</a>
-                        </td>
-                        <td class="px-6 py-4 text-green-500">
-                            Success
-                        </td>
-                    </tr>
+                    @foreach ($intents as $intent)
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $intent->id }}
+                            </th>
+                            <td class="px-6 py-4">
+                                <time>{{ $intent->created_at }}</time>
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $intent->user->id }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $intent->user->name }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $intent->user->email }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $intent->name }}
+                            </td>
+                            <td class="px-6 py-4">
+                                <a class="hover:underline">Parent</a>
+                            </td>
+                            <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500">
+                                {{ $intent->successful ? "Success" : "Declined" }}
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
