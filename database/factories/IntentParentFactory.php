@@ -2,14 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\IntentParent;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Intent>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\IntentParent>
  */
-class IntentFactory extends Factory
+class IntentParentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,8 +18,7 @@ class IntentFactory extends Factory
     {
         return [
             'name' => ucwords(implode(' ', fake()->words())),
-            'parent_id' => IntentParent::all()->random()->id,
-            'successful' => fake()->boolean(90)
+            'user_id' => User::all()->random()->id
         ];
     }
 }

@@ -9,9 +9,9 @@ class Intent extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function parent()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(IntentParent::class);
     }
 
     public function scopeFilter($query, array $filters)

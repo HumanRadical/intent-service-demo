@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('intents', function (Blueprint $table) {
+        Schema::create('intent_parents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('parent_id');
-            $table->boolean('successful');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('intents');
+        Schema::dropIfExists('intent_parents');
     }
 };
