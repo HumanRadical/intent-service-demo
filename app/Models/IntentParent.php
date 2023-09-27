@@ -16,6 +16,6 @@ class IntentParent extends Model
 
     public function intents()
     {
-        return $this->hasMany(Intent::class);
+        return $this->hasMany(Intent::class, 'parent_id');
     }
 }

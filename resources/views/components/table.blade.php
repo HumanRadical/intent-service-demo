@@ -37,7 +37,7 @@
                         {{ $intent->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <a class="hover:underline">Parent</a>
+                        <a href="/parent/{{ $intent->parent->id }}" class="hover:underline">{{ $intent->parent->name }}</a>
                     </td>
                     <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500 whitespace-nowrap">
                         {{ $intent->successful ? "✓ Success" : "✕ Declined" }}
