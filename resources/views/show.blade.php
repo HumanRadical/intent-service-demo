@@ -9,9 +9,9 @@
         <h4><strong class="font-semibold">Parent:</strong> Parent</h4>
         <h4 class="text-{{ $intent->successful ? "green" : "red" }}-500"><strong class="font-semibold text-black">Outcome:</strong> {{ $intent->successful ? "✓ Success" : "✕ Declined" }}</h4>
         <h4><strong class="font-semibold">Donor:</strong></h4>
-        <h4 class="ml-8"><strong class="font-semibold">ID:</strong> {{ $intent->user->id }}</h4>
-        <h4 class="ml-8"><strong class="font-semibold">Name:</strong> {{ $intent->user->name }}</h4>
-        <h4 class="ml-8"><strong class="font-semibold">Email:</strong> {{ $intent->user->email }}</h4>
+        <h4 class="ml-8"><strong class="font-semibold">ID:</strong> {{ $intent->parent->user->id }}</h4>
+        <h4 class="ml-8"><strong class="font-semibold">Name:</strong> {{ $intent->parent->user->name }}</h4>
+        <h4 class="ml-8"><strong class="font-semibold">Email:</strong> {{ $intent->parent->user->email }}</h4>
         <h4><strong class="font-semibold">App:</strong> iOS v5.19.0</h4>
         <h4><strong class="font-semibold">OS:</strong> iOS v5.8</h4>
         <h4><strong class="font-semibold">IP:</strong> 172.29.86.12</h4>
