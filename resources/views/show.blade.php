@@ -1,6 +1,6 @@
 <x-layout>
     <div class="flex gap-4 text-2xl mt-4">
-        <a class="my-auto font-semibold border-2 border-black rounded-full px-1" href="/">&#8592;</a>
+        <button onclick="history.back()" class="my-auto font-semibold border-2 border-black rounded-full px-1">&#8592;</button>
         <h2 class="font-bold">{{ $intent->name }}</h2>
     </div>
     <div class="mt-4 text-lg space-y-1">
