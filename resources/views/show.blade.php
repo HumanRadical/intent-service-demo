@@ -8,7 +8,7 @@
         <h4><strong class="font-semibold">Date:</strong> {{ $intent->created_at->format('F d, Y, h:iA T') }}</h4>
         <h4><strong class="font-semibold">Parent:</strong> 
             @if ($intent->parent)
-                <a href="/intent/{{ $intent->parent->id }}">{{ $intent->parent->name }}</a>
+                <a class="hover:underline" href="/intent/{{ $intent->parent->id }}">{{ $intent->parent->name }}</a>
             @else 
                 <span class="text-gray-400">N/A</span>
             @endif
