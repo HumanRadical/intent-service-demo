@@ -18,7 +18,18 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Intent::truncate();
 
-        User::factory(3)->create();
-        Intent::factory(25)->create();
+        User::factory()->create();
+        for ($i = 0; $i < 10; $i++) {
+            $this->createIntent();
+        }
+    }
+
+    private function createIntent(Intent $parent = null, int $maxChildren = 5): void
+    {
+        $intent = Intent::factory()->create(['parent_id' => $parent?->id]);
+        $childrenCount = rand(0, $maxChildren);
+        for ($i = 0; $i < $childrenCount; $i++) {
+            $this->createIntent($intent, $maxChildren - 1);
+        }
     }
 }
