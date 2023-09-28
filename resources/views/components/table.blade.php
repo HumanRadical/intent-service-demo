@@ -47,7 +47,7 @@
                         @endif
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        {{ count($intent->children) }}
+                        <a class="hover:underline" href="/?parent={{ $intent->id }}">{{ count($intent->children) }}</a>
                     </td>
                     <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500 whitespace-nowrap">
                         {{ $intent->successful ? "✓ Success" : "✕ Declined" }}
