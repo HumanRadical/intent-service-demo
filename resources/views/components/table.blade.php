@@ -39,6 +39,8 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         @if ($intent->parent)
                             <a href="/parent/{{ $intent->parent->id }}" class="hover:underline">{{ $intent->parent->name }}</a>
+                        @else 
+                            <span class="text-gray-300">N/A</span>
                         @endif
                     </td>
                     <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500 whitespace-nowrap">
