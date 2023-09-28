@@ -11,7 +11,7 @@ class IntentController extends Controller
     {
         return view('index', [
             'intents' => Intent::latest()->filter(
-                request(['search'])
+                request(['search', 'date'])
             )->get()
         ]);
     }
