@@ -10,9 +10,14 @@ class Intent extends Model
 {
     use HasFactory;
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function parent()
     {
-        return $this->belongsTo(Intent::class, 'parent_id');
+        return $this->belongsTo(Intent::class);
     }
 
     public function scopeFilter(Builder $query, array $filters)

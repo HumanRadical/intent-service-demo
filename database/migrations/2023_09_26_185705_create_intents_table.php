@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('intents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('user_id');
             $table->foreignId('parent_id')->nullable();
             $table->boolean('successful');
             $table->timestamps();
