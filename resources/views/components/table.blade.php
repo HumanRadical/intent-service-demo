@@ -17,6 +17,9 @@
                     Parent
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Children
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Outcome
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -42,6 +45,9 @@
                         @else 
                             <span class="text-gray-300">N/A</span>
                         @endif
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        {{ count($intent->children) }}
                     </td>
                     <td class="px-6 py-4 text-{{ $intent->successful ? "green" : "red" }}-500 whitespace-nowrap">
                         {{ $intent->successful ? "✓ Success" : "✕ Declined" }}
