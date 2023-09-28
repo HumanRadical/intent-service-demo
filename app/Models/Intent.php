@@ -35,5 +35,9 @@ class Intent extends Model
         $query->when($filters['date'] ?? false, fn (Builder $query, $date) => 
             $query->whereBetween('created_at', [$date, $date . ' 23:59:59'])
         );
+
+        $query->when($filters['parent'] ?? false, fn (Builder $query, $parent) => 
+            $query->where('parent_id', $parent)
+        );
     }
 }
