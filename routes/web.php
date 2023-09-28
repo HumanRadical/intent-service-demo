@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\IntentController;
-use App\Http\Controllers\IntentParentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +16,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IntentController::class, 'index'])->name('index');
 Route::get('/intent/{intent}', [IntentController::class, 'show'])->name('show');
-
-Route::get('/parent/{parent}', [IntentParentController::class, 'show'])->name('show');

@@ -12,7 +12,7 @@ class Intent extends Model
 
     public function parent()
     {
-        return $this->belongsTo(IntentParent::class);
+        return $this->belongsTo(Intent::class, 'parent_id');
     }
 
     public function scopeFilter(Builder $query, array $filters)

@@ -5,7 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Intent;
-use App\Models\IntentParent;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -17,11 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::truncate();
-        IntentParent::truncate();
         Intent::truncate();
 
         User::factory(3)->create();
-        IntentParent::factory(5)->create();
         Intent::factory(25)->create();
     }
 }

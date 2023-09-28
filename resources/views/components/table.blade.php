@@ -38,7 +38,7 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         @if ($intent->parent)
-                            <a href="/parent/{{ $intent->parent->id }}" class="hover:underline">{{ $intent->parent->name }}</a>
+                            <a href="/intent/{{ $intent->parent->id }}" class="hover:underline">{{ $intent->parent->name }}</a>
                         @else 
                             <span class="text-gray-300">N/A</span>
                         @endif

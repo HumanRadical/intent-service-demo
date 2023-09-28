@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\IntentParent;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +19,7 @@ class IntentFactory extends Factory
     {
         return [
             'name' => ucwords(implode(' ', fake()->words())),
-            'parent_id' => IntentParent::all()->random()->id,
+            'user_id' => User::all()->random()->id,
             'successful' => fake()->boolean(90)
         ];
     }
