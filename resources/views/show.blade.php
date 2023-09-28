@@ -6,7 +6,13 @@
     <div class="mt-4 text-lg space-y-1">
         <h4><strong class="font-semibold">ID:</strong> {{ $intent->id }}</h4>
         <h4><strong class="font-semibold">Date:</strong> {{ $intent->created_at->format('F d, Y, h:iA T') }}</h4>
-        <h4><strong class="font-semibold">Parent:</strong> Parent</h4>
+        <h4><strong class="font-semibold">Parent:</strong> 
+            @if ($intent->parent)
+                <a href="/intent/{{ $intent->parent->id }}">{{ $intent->parent->name }}</a>
+            @else 
+                <span class="text-gray-400">N/A</span>
+            @endif
+        </h4>
         <h4 class="text-{{ $intent->successful ? "green" : "red" }}-500"><strong class="font-semibold text-black">Outcome:</strong> {{ $intent->successful ? "✓ Success" : "✕ Declined" }}</h4>
         <h4><strong class="font-semibold">Donor:</strong></h4>
         <h4 class="ml-8"><strong class="font-semibold">ID:</strong> {{ $intent->user->id }}</h4>
@@ -24,6 +30,6 @@
             <h3 class="font-semibold text-2xl">Children:</h3>
             <a class="my-auto text-lg text-gray-500 hover:underline">View Full</a>
         </div>
-        {{-- <x-table :intents="$intent->parent->intents" /> --}}
+        <x-table :intents="$intent->children" />
     </div>
 </x-layout>

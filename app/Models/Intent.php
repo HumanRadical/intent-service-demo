@@ -15,6 +15,11 @@ class Intent extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function children()
+    {
+        return $this->hasMany(Intent::class, 'parent_id');
+    }
+
     public function parent()
     {
         return $this->belongsTo(Intent::class);
